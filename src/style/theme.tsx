@@ -5,12 +5,12 @@ const color = {
 const mode = {
   dark: {
     background: "#898989",
-    borderColor : "#DCDCDC",
+    borderColor: "#DCDCDC",
     color: "#f8f8f8",
   },
   light: {
     background: "#DCDCDC",
-    borderColor : "gray",
+    borderColor: "gray",
     color: "#17171b",
   },
 };

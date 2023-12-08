@@ -5,17 +5,11 @@ const ThemeContext = createContext({
   modeHandler: () => {},
 });
 
-export const ThemeContextProvider = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
+export const ThemeContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [currentTheme, setCurrentTheme] = useState("light");
 
   const modeHandlerFn = () => {
-    currentTheme === "dark"
-      ? setCurrentTheme("light")
-      : setCurrentTheme("dark");
+    currentTheme === "dark" ? setCurrentTheme("light") : setCurrentTheme("dark");
   };
   const data = { currentTheme: currentTheme, modeHandler: modeHandlerFn };
   return <ThemeContext.Provider value={data}>{children}</ThemeContext.Provider>;

@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import DarkMode from "./DarkMode";
 import ThemeContext from "../context/ThemeContext";
-
-const MenuUi: React.FC = () => {
+import { Link } from "react-router-dom";
+const MenuUi = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuChangeStateFn = () => {
@@ -23,14 +23,22 @@ const MenuUi: React.FC = () => {
                 <FontAwesomeIcon icon={faX} onClick={menuChangeStateFn} />
               </MenuHeader>
             </MenuHeaderWrapper>
+
             <MenuListContainer>
               <MenuList>
-                <Menu>Home</Menu>
-                <Menu>PORTFOLIO</Menu>
-                <Menu>GITHUB</Menu>
+                <Link to="/">
+                  <Menu>HOME</Menu>
+                </Link>
+                <a target="_blank" href="https://github.com/rmJHG">
+                  <Menu>GITHUB</Menu>
+                </a>
+                <a target="_blank" href="helloworld">
+                  <Menu>BLOG</Menu>
+                </a>
               </MenuList>
             </MenuListContainer>
           </MenuContainer>
+
           <MenuBackground onClick={menuChangeStateFn} />
         </>
       )}
@@ -47,7 +55,7 @@ export default MenuUi;
 const MenuContainer = styled.div`
   min-width: 200px;
   width: 50%;
-  height: 100vh;
+  height: 100%;
   text-align: center;
   position: fixed;
   right: 0;
@@ -57,11 +65,11 @@ const MenuContainer = styled.div`
   z-index: 99;
   animation: fadeInRight 0.5s;
   @keyframes fadeInRight {
-    0% {
-      transform: translate3d(100%, 0, 0);
+    from {
+      transform: translateX(100%);
     }
     to {
-      transform: translateZ(0);
+      transform: translateX(0);
     }
   }
 `;
@@ -95,10 +103,10 @@ const MenuHeader = styled.div`
 const MenuListContainer = styled.div``;
 const MenuList = styled.ul``;
 
-const Menu = styled.li`
+const Menu = styled.p`
   margin-top: 10px;
   padding: 10px 10px;
-
+  color: white;
   &:hover {
     background-color: white;
     color: black;

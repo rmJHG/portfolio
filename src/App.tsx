@@ -1,19 +1,19 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import React from "react";
-import "./App.css";
 import Layout from "./components/Layout";
-import styled from "styled-components";
+import { Route } from "react-router-dom";
+import { Routes } from "react-router-dom";
+import Main from "./pages/Main";
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <Layout>
-      <Test>hello</Test>
+      <Routes>
+        <Route path="/" Component={Main} />
+      </Routes>
     </Layout>
   );
 };
 
 export default App;
-
-const Test = styled.div`
-  width: 100%;
-  height:100%;
-`;

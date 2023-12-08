@@ -1,19 +1,15 @@
-import React  from "react";
+import React from "react";
 import styled from "styled-components";
 import ThemeContext from "../context/ThemeContext";
 
-const Header: React.FC = () => {
-
+const Header = () => {
   return (
     <Wrapper>
       <Container>
         <TitleContainer>
           <Title>rmJHG</Title>
         </TitleContainer>
-
-    
       </Container>
-
     </Wrapper>
   );
 };
@@ -53,4 +49,3 @@ const Title = styled.div`
   }};
   font-size: 25px;
 `;
-

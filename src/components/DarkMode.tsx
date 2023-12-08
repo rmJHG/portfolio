@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import ThemeContext from "../context/ThemeContext";
 
-const DarkMode: React.FC = () => {
+const DarkMode = () => {
   const context = useContext(ThemeContext);
 
   return (
